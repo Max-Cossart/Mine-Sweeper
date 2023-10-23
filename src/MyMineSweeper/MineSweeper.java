@@ -95,147 +95,146 @@ public class MineSweeper {
 					if(x != 0 && y != 0 && x != field.length -1 && y != field[x].length - 1) {
 				
 						if(field[x - 1][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x + 1][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x - 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x + 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x - 1][y + 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x][y + 1] == " * ") {
-							count = count  + 1;
+							count++;
 						}
 						if(field[x + 1][y + 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 					}
 					if(x == 0) {
 						if(y == 0) {
 							if(field[x + 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y + 1] == " * ") {
-								count = count  + 1;
+								count++;
 							}
 							if(field[x + 1][y + 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 						} else if (y == field[x].length - 1) {
 							if(field[x][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x + 1][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x + 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 						} else {
 							if(field[x][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x + 1][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x + 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y + 1] == " * ") {
-								count = count  + 1;
+								count++;
 							}
 							if(field[x + 1][y + 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 						}
 					}
 					if (x == field.length - 1) {
 						if(y == 0) {
 							if(field[x - 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x - 1][y + 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y + 1] == " * ") {
-								count = count  + 1;
+								count++;
 							}
 						} else if (y == field.length - 1) {
 							if(field[x - 1][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x - 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 						} else {
 							if(field[x - 1][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y - 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x - 1][y] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x - 1][y + 1] == " * ") {
-								count = count + 1;
+								count++;
 							}
 							if(field[x][y + 1] == " * ") {
-								count = count  + 1;
+								count++;
 							}
 						}
 					}
 					if(y == 0 && x != 0 && x != field.length-1) {
 						if(field[x - 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x + 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x - 1][y + 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x][y + 1] == " * ") {
-							count = count  + 1;
+							count++;
 						}
 						if(field[x + 1][y + 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 					}
 					if(y == field.length - 1 && x != 0 && x != field.length - 1) {
 						if(field[x - 1][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x + 1][y - 1] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x - 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 						if(field[x + 1][y] == " * ") {
-							count = count + 1;
+							count++;
 						}
 					}
 				}
 				
-				String countNum = Integer.toString(count);
 				if (field[x][y] != " * ") {					
-					field[x][y] = " " + countNum + " ";
+					field[x][y] = " " + count + " ";
 				}
 			}
 		}
@@ -247,12 +246,21 @@ public class MineSweeper {
 		
 		count--;
 		
+//		if(field[x][y].equals(" 0 ") == true) {
+//			if(field[x - 1][y - 1]) {
+//				display[x-1][y-1] = field[x - 1][y - 1];
+//			}
+//		}
 		if(!field[x][y].equals(" * ") == true) {
 			display[x][y] = field[x][y];
 		}else {
 			isDone = true;
 			display = field;
 		}
+	}
+	
+	public void cascade() {
+		
 	}
 		
 
